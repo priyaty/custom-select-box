@@ -5,7 +5,8 @@
 		// Establish our default settings
         var settings = $.extend({
             listHeading: "List Items",
-			listName: "list_name"
+			listName: "list_name",
+			dropdownFontFamily: "cursive"
         }, options);
 		// END: Establish our default settings
 
@@ -24,7 +25,7 @@
 		var itemListBlock = "<ul class='"+itemListBlockClasses+"'></ul>";
 		var itemListElement = "<li class='custom-list-item'></li>";
 		var itemLinkElement = "<a class='"+itemLinkClasses+"' href='#'></a>";
-
+		
         this.each( function() {
 			select_ele = $(this).children("select");
 			option_ele = select_ele.find("option");
@@ -48,8 +49,6 @@
 					$(".custom-list-item").each(function(j){
 						j++;
 						$(this).attr("data-option", "option-"+j);
-						console.log("select parent wrapper: "+$(this).parents(parentWrapper).attr("id"));
-						console.log("option attribs: "+j);
 					});
 				}
 			});
@@ -66,12 +65,15 @@
 
         });
 
+		
+		//Default Properties
+		
+		this.find("*").css("fontFamily", settings.dropdownFontFamily);
+		
 		//Open/close dropdown
 		
 		$(".dropdown-link").on("click", function(e){
 			e.preventDefault();
-			var cur_val = $(this).children(".current-value").html();
-			console.log("current value: "+cur_val);
 			$(this).parents(".dropdown-wrapper").children(".dropdown-list").slideToggle();
 		});
 
@@ -81,7 +83,6 @@
 			e.preventDefault();
 			var option_no = $(this).parents(".custom-list-item").attr("data-option");
 			var selected_item = $(this).text();
-			console.log("option selected: "+option_no);
 			$(this).parents(".dropdown-wrapper").siblings(".select-box").find("option[data-item="+option_no+"]").prop("selected", true);
 			$(this).parents(".dropdown-wrapper").find(".dropdown-link .current-value").text(selected_item);
 		});
