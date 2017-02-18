@@ -1,0 +1,11 @@
+{
+  "name": "custom-dropdown",
+  "version": "1.0.0",
+  "description": "Custom dropdown to mimic your select box functionality",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Priya Tyagi",
+  "license": "ISC"
+}
