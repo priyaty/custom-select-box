@@ -42,7 +42,7 @@
 			option_ele.each(function(i){
 				if(i>0){
 					option_val = $(this).val();
-					$(this).val(option_val);=
+					$(this).val(option_val);
 					$(this).attr("data-item", "option-"+i);
 					listClass = $(this).parents(parentWrapper).find(".custom-select-box-list");
 					listClass.append(itemListElement);
