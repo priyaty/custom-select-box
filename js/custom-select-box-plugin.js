@@ -10,7 +10,7 @@
         }, options);
 		// END: Establish our default settings
 
-		var parentWrapper, select_ele, option_ele, option_val, option_no, parent_list;
+		var parentWrapper, select_ele, option_ele, option_val, option_no, parent_list, listClass;
 
 		parentWrapper = this.attr("id");
 		parentWrapper = "#"+parentWrapper;
@@ -42,8 +42,7 @@
 			option_ele.each(function(i){
 				if(i>0){
 					option_val = $(this).val();
-					$(this).val(option_val);
-					console.log("this class option: "+$(this).parents().attr("class"));
+					$(this).val(option_val);=
 					$(this).attr("data-item", "option-"+i);
 					listClass = $(this).parents(parentWrapper).find(".custom-select-box-list");
 					listClass.append(itemListElement);
@@ -54,7 +53,7 @@
 				}
 			});
 
-			$(".custom-list-item").each(function(){
+			$(parentWrapper).find(".custom-list-item").each(function(){
 				$(this).append(itemLinkElement);
 			});
 
