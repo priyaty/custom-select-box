@@ -4,16 +4,21 @@
 
 		// Establish our default settings
         var settings = $.extend({
+			dropdownClass: "select-box-wrapper",
             listHeading: "List Items",
 			listName: "list_name",
 			dropdownFontFamily: "cursive"
         }, options);
 		// END: Establish our default settings
 
-		var parentWrapper, select_ele, option_ele, option_val, option_no, parent_list, listClass;
+		/*-----------------Variable Initialization and declarations-----------------*/
+		
+		var parentWrapperIdValue, parentWrapper, dropDownParentClass, select_ele, option_ele, option_val, option_no, parent_list, listClass;
 
-		parentWrapper = this.attr("id");
-		parentWrapper = "#"+parentWrapper;
+		dropDownParentClass = settings.dropdownClass;
+		parentWrapperIdValue = this.attr("id");
+		parentWrapper = "#"+parentWrapperIdValue;
+		var optionClass = "option-ele";
 		var itemLinkClasses = "custom-list-item__link dropdown-item";
 		var customBoxWrapperClasses = "custom-select-box dropdown-wrapper";
 		var itemListBlockClasses = "custom-select-box-list dropdown-list";
@@ -26,46 +31,49 @@
 		var itemListElement = "<li class='custom-list-item'></li>";
 		var itemLinkElement = "<a class='"+itemLinkClasses+"' href='#'></a>";
 		
-//        this.each( function() {
-			select_ele = $(this).children("select");
-			option_ele = select_ele.find("option");
-			option_len = option_ele.length - 1;
-
-			$(this).find("select").addClass("select-box");
-			$(this).find("select").attr("name", settings.listName);
-
-			$(this).append(customBoxWrapper);
-			$(this).find(".custom-select-box").append(selectBoxLink);
-			$(this).find(".custom-select-box-link").append(downIcon);
-			$(this).find(".custom-select-box").append(itemListBlock);
-
-			option_ele.each(function(i){
-				if(i>0){
-					option_val = $(this).val();
-					$(this).val(option_val);
-					$(this).attr("data-item", "option-"+i);
-					listClass = $(this).parents(parentWrapper).find(".custom-select-box-list");
-					listClass.append(itemListElement);
-					$(parentWrapper).find(".custom-list-item").each(function(j){
-						j++;
-						$(this).attr("data-option", "option-"+j);
-					});
-				}
-			});
-
-			$(parentWrapper).find(".custom-list-item").each(function(){
-				$(this).append(itemLinkElement);
-			});
-
-			option_ele.each(function(i){
-				option_val = $(this).val();
-				option_no = $(this).attr("data-item");
-				listClass.find("li[data-option=option-"+i+"]").children(".dropdown-item").text(option_val);
-			});
-
-//        });
-
+		/*-----------------END: Variable Initialization and declarations-----------------*/
 		
+		/*-----------------Inserting elements-----------------*/
+		
+		select_ele = $(this).children("select");
+		option_ele = select_ele.find("option");
+		option_len = option_ele.length - 1;
+
+		$(this).find("select").addClass("select-box");
+		$(this).find("select").attr("name", settings.listName);
+
+		$(this).append(customBoxWrapper);
+		$(this).find(".custom-select-box").append(selectBoxLink);
+		$(this).find(".custom-select-box-link").append(downIcon);
+		$(this).find(".custom-select-box").append(itemListBlock);
+
+		option_ele.each(function(i){
+			if(i>0){
+				option_val = $(this).val();
+				$(this).val(option_val);
+				$(this).attr("data-item", "option-"+i);
+				$(this).attr("class", optionClass);
+				listClass = $(this).parents(parentWrapper).find(".custom-select-box-list");
+				listClass.append(itemListElement);
+				$(parentWrapper).find(".custom-list-item").each(function(j){
+					j++;
+					$(this).attr("data-option", "option-"+j);
+				});
+			}
+		});
+
+		$(parentWrapper).find(".custom-list-item").each(function(){
+			$(this).append(itemLinkElement);
+		});
+
+		option_ele.each(function(i){
+			option_val = $(this).val();
+			option_no = $(this).attr("data-item");
+			listClass.find("li[data-option=option-"+i+"]").children(".dropdown-item").text(option_val);
+		});
+
+		/*-----------------END: Inserting elements-----------------*/
+
 		//Default Properties
 		
 		this.find("*").css("fontFamily", settings.dropdownFontFamily);
@@ -77,6 +85,19 @@
 			$(this).parents(".dropdown-wrapper").children(".dropdown-list").slideToggle();
 		});
 
+//		$(document).on("click", function(e){
+//			e.preventDefault();
+//			var tar_ele = $(e.target);
+//			console.log("clicked element: "+tar_ele.attr("class"));
+//			if(tar_ele.parents(parentWrapper).attr("id") == parentWrapperIdValue){
+//				console.log("clicked inside: "+parentWrapperIdValue);
+//				$(parentWrapper).children(".dropdown-list").slideDown();
+//			}else{
+//				console.log("clicked outside: "+parentWrapperIdValue);
+//				$(".dropdown-list").slideUp();
+//			}
+//		});
+		
 		//Selecting item from dropdown
 
 		$(parentWrapper+" .custom-list-item .dropdown-item").on("click", function(e){
