@@ -28,7 +28,6 @@
 		
 //        this.each( function() {
 			select_ele = $(this).children("select");
-			console.log($(this).attr("id"));
 			option_ele = select_ele.find("option");
 			option_len = option_ele.length - 1;
 
@@ -44,10 +43,11 @@
 				if(i>0){
 					option_val = $(this).val();
 					$(this).val(option_val);
+					console.log("this class option: "+$(this).parents().attr("class"));
 					$(this).attr("data-item", "option-"+i);
 					listClass = $(this).parents(parentWrapper).find(".custom-select-box-list");
 					listClass.append(itemListElement);
-					$(".custom-list-item").each(function(j){
+					$(parentWrapper).find(".custom-list-item").each(function(j){
 						j++;
 						$(this).attr("data-option", "option-"+j);
 					});
