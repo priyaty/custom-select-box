@@ -26,8 +26,9 @@
 		var itemListElement = "<li class='custom-list-item'></li>";
 		var itemLinkElement = "<a class='"+itemLinkClasses+"' href='#'></a>";
 		
-        this.each( function() {
+//        this.each( function() {
 			select_ele = $(this).children("select");
+			console.log($(this).attr("id"));
 			option_ele = select_ele.find("option");
 			option_len = option_ele.length - 1;
 
@@ -35,9 +36,9 @@
 			$(this).find("select").attr("name", settings.listName);
 
 			$(this).append(customBoxWrapper);
-			$(".custom-select-box").append(selectBoxLink);
-			$(".custom-select-box-link").append(downIcon);
-			$(".custom-select-box").append(itemListBlock);
+			$(this).find(".custom-select-box").append(selectBoxLink);
+			$(this).find(".custom-select-box-link").append(downIcon);
+			$(this).find(".custom-select-box").append(itemListBlock);
 
 			option_ele.each(function(i){
 				if(i>0){
@@ -63,7 +64,7 @@
 				listClass.find("li[data-option=option-"+i+"]").children(".dropdown-item").text(option_val);
 			});
 
-        });
+//        });
 
 		
 		//Default Properties
@@ -72,14 +73,14 @@
 		
 		//Open/close dropdown
 		
-		$(".dropdown-link").on("click", function(e){
+		$(parentWrapper+" .dropdown-link").on("click", function(e){
 			e.preventDefault();
 			$(this).parents(".dropdown-wrapper").children(".dropdown-list").slideToggle();
 		});
 
 		//Selecting item from dropdown
 
-		$(".custom-list-item .dropdown-item").on("click", function(e){
+		$(parentWrapper+" .custom-list-item .dropdown-item").on("click", function(e){
 			e.preventDefault();
 			var option_no = $(this).parents(".custom-list-item").attr("data-option");
 			var selected_item = $(this).text();
