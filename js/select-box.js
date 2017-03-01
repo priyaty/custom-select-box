@@ -17,4 +17,6 @@ $(document).ready( function() {
 		listName: "countries"
 	});
 	
+//	$('.select-box-wrapper').openClose();
+	
 });
