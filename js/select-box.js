@@ -7,13 +7,14 @@ $(document).ready( function() {
 		listName: "food"
 	});
 	
-//	$('#cars-list').customSelectBox({
-//		listHeading: "Cars",
-//		listName: "cars"
-//	});
-//	
-//	$('#country-list').customSelectBox({
-//		listHeading: "Country list",
-//		listName: "countries"
-//	});
+	$('#cars-list').customSelectBox({
+		listHeading: "Cars",
+		listName: "cars"
+	});
+	
+	$('#country-list').customSelectBox({
+		listHeading: "Country list",
+		listName: "countries"
+	});
+	
 });
