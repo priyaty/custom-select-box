@@ -12,7 +12,6 @@ $indigo: #3F51B5;
 $dark-indigo: #1A237E;
 
 .select-box-wrapper{
-	
   .select-box{
     display:none;
   }
@@ -67,24 +66,8 @@ $dark-indigo: #1A237E;
 			border-bottom: 1px solid $light-gray;
 			transition: 0.2s ease;
 
-//			&:after{
-//				content: "";
-//				position: absolute;
-//				top: 0;
-//				right: 0;
-//				height: 100%;
-//				width: 2px;
-//				background-color: $yellow;
-//				opacity: 0;
-//				transition: 0.2s ease;
-//			}
-
 			&:hover{
 				background: $light-gray;
-
-//				&::after{
-//					opacity: 1;
-//				}
 			}
 			
 			&__link{

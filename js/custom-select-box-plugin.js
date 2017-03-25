@@ -93,23 +93,42 @@
 	//Open/close dropdown
 	
 	$(document).on("click", function(e){
-		var tar_ele = $(e.target);
-		var tar_class = tar_ele.attr("class");
-
-		if(!tar_ele.parents().hasClass("select-box-wrapper")){
-			$(".dropdown-wrapper").removeClass("open");
-			$(".select-box-wrapper .dropdown-list").slideUp();
-		}else{
-			if((tar_ele.hasClass("dropdown-link")) || (tar_ele.parents().hasClass("dropdown-link"))){
-				e.preventDefault();
+		var tar_ele, tar_class;
+//		var timeDelay = 400, clearTime;
+		
+//		clearTimeout(clearTime);
+//		console.log("current time: "+clearTime);
+//		clearTime = setTimeout(function(){
+			tar_ele = $(e.target);
+			tar_class = tar_ele.attr("class");
+//			$(".dropdown-wrapper").removeClass("open");
+//			$(".select-box-wrapper .dropdown-list").slideUp();
+			if(!tar_ele.parents().hasClass("select-box-wrapper")){
 				$(".dropdown-wrapper").removeClass("open");
 				$(".select-box-wrapper .dropdown-list").slideUp();
-				if(!tar_ele.parents(".dropdown-wrapper").hasClass("open")){
-					tar_ele.parents(".dropdown-wrapper").addClass("open");
-					tar_ele.parents(".dropdown-wrapper").find(".dropdown-list").slideDown();
+				console.log("close");
+			}else{
+				if((tar_ele.hasClass("dropdown-link")) || (tar_ele.parents().hasClass("dropdown-link"))){
+					e.preventDefault();
+					console.log("target element class: "+tar_ele.attr("class"));
+//					$(".dropdown-wrapper").removeClass("open");
+//					$(".select-box-wrapper .dropdown-list").slideUp();
+					if(!tar_ele.parents(".dropdown-wrapper").hasClass("open")){
+						console.log("does not have open");
+						$(".dropdown-wrapper").removeClass("open");
+						$(".select-box-wrapper .dropdown-list").slideUp();
+						tar_ele.parents(".dropdown-wrapper").addClass("open");
+						tar_ele.parents(".dropdown-wrapper").find(".dropdown-list").slideDown();
+					}else{
+						$(".dropdown-wrapper").removeClass("open");
+						$(".select-box-wrapper .dropdown-list").slideUp();
+					}
+					console.log("open");
 				}
 			}
-		}
+//		}, timeDelay);
+//		console.log("current time after execution: "+clearTime);
+		
 	});
 
 }(jQuery));
