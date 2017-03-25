@@ -7,7 +7,7 @@
 			dropdownClass: "select-box-wrapper",
             listHeading: "List Items",
 			listName: "list_name",
-			dropdownFontFamily: "cursive"
+			//dropdownFontFamily: "cursive"
         }, options);
 		// END: Establish our default settings
 
@@ -76,14 +76,11 @@
 
 		//Default Properties
 		
-		this.find("*").css("fontFamily", settings.dropdownFontFamily);
+		//this.find("*").css("fontFamily", settings.dropdownFontFamily);
 			
 		//Selecting item from dropdown
 
 		$(parentWrapper+" .custom-list-item .dropdown-item").on("click", function(e){
-			
-			console.log("item selected");
-			
 			e.preventDefault();
 			var option_no = $(this).parents(".custom-list-item").attr("data-option");
 			var selected_item = $(this).text();

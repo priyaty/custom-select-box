@@ -1,6 +1,7 @@
 $black: #212121;
 $gray: #999;
 $dark-gray: #333;
+$gray-2: #dbdbdb;
 $dark-pink: #880E4F;
 $pink: #E91E63;
 $teal: #009688;
@@ -35,22 +36,26 @@ $dark-indigo: #1A237E;
 	}
 
 	.custom-select-box-link{
-		background: $black;
-		color: white;
+		background: white;
+		color: $black;
 		padding: 10px 20px;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		width: 220px;
-		box-shadow: 0px 3px 9px -3px rgba(0,0,0,0.4);
 		z-index: 1;
 		position: relative;
+		border: 1px solid $gray-2;
 	}
 
 	.custom-select-box-list{
 		position: absolute;
-		background: $teal;
 		border-bottom: 1px solid $light-gray;
+		
+		background: white;
+		border: 1px solid $light-gray;
+		border-top: 0;
+		box-shadow: 0px 0 10px -2px rgba(0, 0, 0, 0.2);
 
 		&:last-child{
 			border: 0;
@@ -59,34 +64,34 @@ $dark-indigo: #1A237E;
 		.custom-list-item{
 			list-style: none;
 			position: relative;
-			border-bottom: 1px solid $dark-teal;
+			border-bottom: 1px solid $light-gray;
 			transition: 0.2s ease;
 
-			&:after{
-				content: "";
-				position: absolute;
-				top: 0;
-				right: 0;
-				height: 100%;
-				width: 2px;
-				background-color: $yellow;
-				opacity: 0;
-				transition: 0.2s ease;
-			}
+//			&:after{
+//				content: "";
+//				position: absolute;
+//				top: 0;
+//				right: 0;
+//				height: 100%;
+//				width: 2px;
+//				background-color: $yellow;
+//				opacity: 0;
+//				transition: 0.2s ease;
+//			}
 
 			&:hover{
-				background: $dark-teal;
+				background: $light-gray;
 
-				&::after{
-					opacity: 1;
-				}
+//				&::after{
+//					opacity: 1;
+//				}
 			}
 			
 			&__link{
 				display: block;
 				padding: 10px 20px;
 				padding-right: 40px;
-				color: white;
+				color: $black;
 			}
 		}
 	}
