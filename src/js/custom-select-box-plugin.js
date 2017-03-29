@@ -5,9 +5,9 @@
 		// Establish our default settings
         var settings = $.extend({
 			dropdownClass: "select-box-wrapper",
+			dropdownIcon: "default",
             listHeading: "List Items",
-			listName: "list_name",
-			//dropdownFontFamily: "cursive"
+			listName: "list_name"
         }, options);
 		// END: Establish our default settings
 
@@ -26,10 +26,14 @@
 
 		var customBoxWrapper = "<div class='"+customBoxWrapperClasses+"'></div>";
 		var selectBoxLink = "<a href='#' class='"+customBoxLinkClasses+"'><span class='span custom-select-box__selected-item current-value'>"+settings.listHeading+"</span></a>";
-		var downIcon = "<i class='fa fa-angle-down' aria-hidden='true'></i>";
+		var downIcon = "<img class='custom-select-box-link__icon' src='../img/down-arrow.png'></img>";
 		var itemListBlock = "<ul class='"+itemListBlockClasses+"'></ul>";
 		var itemListElement = "<li class='custom-list-item'></li>";
 		var itemLinkElement = "<a class='"+itemLinkClasses+"' href='#'></a>";
+		
+		if(settings.dropdownIcon != "default"){
+			downIcon = "<span class='"+settings.dropdownIcon+"' aria-hidden='true'></span>";
+		}
 		
 		/*-----------------END: Variable Initialization and declarations-----------------*/
 		
@@ -94,41 +98,28 @@
 	
 	$(document).on("click", function(e){
 		var tar_ele, tar_class;
-//		var timeDelay = 400, clearTime;
+		var timeDelay = 400, clearTime = 0;
 		
-//		clearTimeout(clearTime);
-//		console.log("current time: "+clearTime);
-//		clearTime = setTimeout(function(){
-			tar_ele = $(e.target);
-			tar_class = tar_ele.attr("class");
-//			$(".dropdown-wrapper").removeClass("open");
-//			$(".select-box-wrapper .dropdown-list").slideUp();
-			if(!tar_ele.parents().hasClass("select-box-wrapper")){
-				$(".dropdown-wrapper").removeClass("open");
-				$(".select-box-wrapper .dropdown-list").slideUp();
-				console.log("close");
-			}else{
-				if((tar_ele.hasClass("dropdown-link")) || (tar_ele.parents().hasClass("dropdown-link"))){
-					e.preventDefault();
-					console.log("target element class: "+tar_ele.attr("class"));
-//					$(".dropdown-wrapper").removeClass("open");
-//					$(".select-box-wrapper .dropdown-list").slideUp();
-					if(!tar_ele.parents(".dropdown-wrapper").hasClass("open")){
-						console.log("does not have open");
-						$(".dropdown-wrapper").removeClass("open");
-						$(".select-box-wrapper .dropdown-list").slideUp();
-						tar_ele.parents(".dropdown-wrapper").addClass("open");
-						tar_ele.parents(".dropdown-wrapper").find(".dropdown-list").slideDown();
-					}else{
-						$(".dropdown-wrapper").removeClass("open");
-						$(".select-box-wrapper .dropdown-list").slideUp();
-					}
-					console.log("open");
+		tar_ele = $(e.target);
+		tar_class = tar_ele.attr("class");
+		
+		if(!tar_ele.parents().hasClass("select-box-wrapper")){
+			$(".dropdown-wrapper").removeClass("open");
+			$(".select-box-wrapper .dropdown-list").slideUp();
+		}else{
+			if((tar_ele.hasClass("dropdown-link")) || (tar_ele.parents().hasClass("dropdown-link"))){
+				e.preventDefault();
+				if(!tar_ele.parents(".dropdown-wrapper").hasClass("open")){
+					$(".dropdown-wrapper").removeClass("open");
+					$(".select-box-wrapper .dropdown-list").slideUp();
+					tar_ele.parents(".dropdown-wrapper").addClass("open");
+					tar_ele.parents(".dropdown-wrapper").find(".dropdown-list").slideDown();
+				}else{
+					$(".dropdown-wrapper").removeClass("open");
+					$(".select-box-wrapper .dropdown-list").slideUp();
 				}
 			}
-//		}, timeDelay);
-//		console.log("current time after execution: "+clearTime);
-		
+		}
 	});
 
 }(jQuery));

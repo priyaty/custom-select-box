@@ -19,6 +19,7 @@ $dark-indigo: #1A237E;
 
 .custom-select-box{
 	position: relative;
+	display: inline-block;
 
 	.custom-select-box-link, .dropdown-item{
 		text-decoration: none;
@@ -45,6 +46,10 @@ $dark-indigo: #1A237E;
 		z-index: 1;
 		position: relative;
 		border: 1px solid $gray-2;
+		
+		&__icon{
+			height: 10px;
+		}
 	}
 
 	.custom-select-box-list{

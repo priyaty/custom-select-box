@@ -1,10 +1,9 @@
 $(document).ready( function() {
 	
-	var time_delay = 1000;
-	
     $('#food-list').customSelectBox({
 		listHeading: "Food Item",
-		listName: "food"
+		listName: "food",
+		dropdownIcon: "fa fa-angle-down"
 	});
 	
 	$('#cars-list').customSelectBox({
