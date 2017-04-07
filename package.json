@@ -7,5 +7,23 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Priya Tyagi",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "prerender": "^4.4.1",
+    "pug": "^2.0.0-beta11",
+    "dssrv-prerender": "^1.3.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/neonbird/Custom-select-box-plugin.git"
+  },
+  "bugs": {
+    "url": "https://gitlab.com/neonbird/Custom-select-box-plugin/issues"
+  },
+  "homepage": "https://gitlab.com/neonbird/Custom-select-box-plugin#README"
 }

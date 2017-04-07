@@ -49,6 +49,13 @@ $dark-indigo: #1A237E;
 		
 		&__icon{
 			height: 10px;
+			display: flex;
+			align-items: center;
+			
+			.dropdown-img{
+				height: 100%;
+				border: 0;
+			}
 		}
 	}
 
