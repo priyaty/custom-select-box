@@ -1,0 +1,5 @@
+/*Only for IE9*/
+:root .custom-select-box .custom-select-box-link {
+  display: block; }
+  :root .custom-select-box .custom-select-box-link__icon {
+    float: right; }

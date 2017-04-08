@@ -1,0 +1,12 @@
+/*Only for IE9*/
+:root {
+	.custom-select-box {
+		.custom-select-box-link{
+			display: block;
+			
+			&__icon{
+				float: right;
+			}
+		}
+	}
+}
