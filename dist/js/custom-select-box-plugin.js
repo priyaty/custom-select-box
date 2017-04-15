@@ -77,10 +77,6 @@
 		});
 
 		/*-----------------END: Inserting elements-----------------*/
-
-		//Default Properties
-		
-		//this.find("*").css("fontFamily", settings.dropdownFontFamily);
 			
 		//Selecting item from dropdown
 
@@ -91,6 +87,8 @@
 			$(this).parents(".dropdown-wrapper").siblings(".select-box").find("option[data-item="+option_no+"]").prop("selected", true);
 			$(this).parents(".dropdown-wrapper").find(".dropdown-link .current-value").text(selected_item);
 		});
+		
+		//END: Selecting item from dropdown
 
     }
 	
@@ -121,5 +119,7 @@
 			}
 		}
 	});
+	
+	//END: Open/close dropdown
 
 }(jQuery));
