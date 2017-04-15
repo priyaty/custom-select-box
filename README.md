@@ -23,6 +23,7 @@ $('#list-id').customSelectBox();
 ```
 
 ## Settings
+
 Option | Type | Default | Description
 ------ | ---- | ------- | -----------
 dropdownClass | string | select-box-wrapper | It’s the parent container of the html select box.
