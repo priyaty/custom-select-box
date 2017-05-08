@@ -5,7 +5,8 @@
 
 .custom-select-box {
   position: relative;
-  display: inline-block; }
+  display: inline-block;
+  z-index: 10; }
   .custom-select-box .custom-select-box-link, .custom-select-box .dropdown-item {
     text-decoration: none; }
   .custom-select-box .custom-select-box-link, .custom-select-box .custom-select-box-list {
@@ -53,3 +54,9 @@
         padding: 10px 20px;
         padding-right: 40px;
         color: #212121; }
+
+/*Only for IE9*/
+:root .custom-select-box .custom-select-box-link {
+  display: block; }
+  :root .custom-select-box .custom-select-box-link__icon {
+    float: right; }
