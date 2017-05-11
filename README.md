@@ -30,6 +30,7 @@ dropdownClass | string | select-box-wrapper | It’s the parent container of the
 dropdownIcon | string | default | It’s the class name/s of the dropdown icon. E.g dropdownIcon: “dropdown-icon”. Incase if font awesome icon has to be added, the value can be something like this “fa fa-angle-down”.
 listHeading | string | List Items | Custom Select box list heading.
 listName | string | list_name | Name attribute value of the respective select box.
+additionalLinkClass | string | null | If there is any additional style class that needs to be added to the dropdown link, then that can be specified using this setting.
 
 ## Custom styling of the select box
 Use the following classes to make any desired css changes to the respective element.
