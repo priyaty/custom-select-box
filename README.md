@@ -38,7 +38,7 @@ Use the following classes to make any desired css changes to the respective elem
 ### 1.	.lesbox-link
 For styling the dropdown heading container use this class to add different css properties.
 
-### 2.	.lesbox-list-list
+### 2.	.lesbox-list
 For styling the dropdown box.
 
 ### 3.	.lesbox-list-item
