@@ -31,7 +31,6 @@
 				customBoxLinkClasses = "custom-select-box-link dropdown-link";
 			}
 		
-			
 			customBoxWrapper = "<div class='"+customBoxWrapperClasses+"'></div>",
 			selectBoxLink = "<a href='#' class='"+customBoxLinkClasses+"'><span class='span custom-select-box__selected-item current-value'>"+settings.listHeading+"</span></a>",
 			downIcon = "<span class='custom-select-box-link__icon'><img class='dropdown-img' src='img/down-arrow.png'></img></span>",
