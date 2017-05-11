@@ -42,14 +42,14 @@
     box-shadow: 0px 0 10px -2px rgba(0, 0, 0, 0.2); }
     .lesbox .lesbox-list:last-child {
       border: 0; }
-    .lesbox .lesbox-list .custom-list-item {
+    .lesbox .lesbox-list .lesbox-list-item {
       list-style: none;
       position: relative;
       border-bottom: 1px solid #f1f1f1;
       transition: 0.2s ease; }
-      .lesbox .lesbox-list .custom-list-item:hover {
+      .lesbox .lesbox-list .lesbox-list-item:hover {
         background: #f1f1f1; }
-      .lesbox .lesbox-list .custom-list-item__link {
+      .lesbox .lesbox-list .lesbox-list-item__link {
         display: block;
         padding: 10px 20px;
         padding-right: 40px;

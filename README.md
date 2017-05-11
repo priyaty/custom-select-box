@@ -1,5 +1,5 @@
 # Lesbox
-_Select box with less code..._
+_Code less with lesbox for making custom styled select box..._
 
 ## HTML Strucure
 
@@ -35,16 +35,16 @@ additionalLinkClass | string | null | If there is any additional style class tha
 ## Custom styling of the select box
 Use the following classes to make any desired css changes to the respective element.
 
-### 1.	.custom-select-box-link
+### 1.	.lesbox-link
 For styling the dropdown heading container use this class to add different css properties.
 
-### 2.	.custom-select-box-list
+### 2.	.lesbox-list-list
 For styling the dropdown box.
 
-### 3.	.custom-list-item
+### 3.	.lesbox-list-item
 For styling the dropdown outer list block.
 
-### 4.	.custom-list-item__link
+### 4.	.lesbox-list-item__link
 For styling the dropdown list item link.
 
 ## Browser Support

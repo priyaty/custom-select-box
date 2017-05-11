@@ -16,29 +16,30 @@ var selectDropDownClass;
 
 		/*-----------------Variable Initialization and declarations-----------------*/
 		
-		var parentWrapperIdValue, parentWrapper, dropDownParentClass, select_ele, option_ele, option_val, option_no, parent_list, listClass, additionalLinkClass;
+		var parentWrapperIdValue, parentWrapper, dropDownParentClass, select_ele, option_ele, option_val, option_no, parent_list, listClass, additionalLinkClass, itemLinkStyleClass;
 
 		dropDownParentClass = settings.dropdownClass,
-			selectDropDownClass = dropDownParentClass;
+		selectDropDownClass = dropDownParentClass;
 		additionalLinkClass = settings.additionalLinkClass;
 		parentWrapperIdValue = this.attr("id");
 		parentWrapper = "#"+parentWrapperIdValue;
 		var optionClass = "option-ele",
-			itemLinkClasses = "custom-list-item__link dropdown-item",
-			customBoxWrapperClasses = "lesbox dropdown-wrapper",
-			itemListBlockClasses = "lesbox-list dropdown-list";
-		
+			itemLinkStyleClass = "lesbox-list-item",
+			itemLinkClasses = itemLinkStyleClass+"__link dropdown-item",
+			lesboxWrapperClasses = "lesbox lesbox-dropdown-wrapper",
+			itemListBlockClasses = "lesbox-list lesbox-dropdown-list";
+
 			if(additionalLinkClass !== ""){
-				customBoxLinkClasses = "lesbox-link dropdown-link "+additionalLinkClass;
+				customBoxLinkClasses = "lesbox-link lesbox-dropdown-link "+additionalLinkClass;
 			}else{
-				customBoxLinkClasses = "lesbox-link dropdown-link";
+				customBoxLinkClasses = "lesbox-link lesbox-dropdown-link";
 			}
 		
-			customBoxWrapper = "<div class='"+customBoxWrapperClasses+"'></div>",
+			customBoxWrapper = "<div class='"+lesboxWrapperClasses+"'></div>",
 			selectBoxLink = "<a href='#' class='"+customBoxLinkClasses+"'><span class='span lesbox__selected-item current-value'>"+settings.listHeading+"</span></a>",
 			downIcon = "<span class='lesbox-link__icon'><img class='dropdown-img' src='img/down-arrow.png'></img></span>",
 			itemListBlock = "<ul class='"+itemListBlockClasses+"'></ul>",
-			itemListElement = "<li class='custom-list-item'></li>",
+			itemListElement = "<li class='"+itemLinkStyleClass+"'></li>",
 			itemLinkElement = "<a class='"+itemLinkClasses+"' href='#'></a>";
 		
 		if(settings.dropdownIcon != "default"){
@@ -69,14 +70,14 @@ var selectDropDownClass;
 				$(this).attr("class", optionClass);
 				listClass = $(this).parents(parentWrapper).find(".lesbox-list");
 				listClass.append(itemListElement);
-				$(parentWrapper).find(".custom-list-item").each(function(j){
+				$(parentWrapper).find("."+itemLinkStyleClass).each(function(j){
 					j++;
 					$(this).attr("data-option", "option-"+j);
 				});
 			}
 		});
 
-		$(parentWrapper).find(".custom-list-item").each(function(){
+		$(parentWrapper).find("."+itemLinkStyleClass).each(function(){
 			$(this).append(itemLinkElement);
 		});
 
@@ -90,14 +91,14 @@ var selectDropDownClass;
 			
 		//Selecting item from dropdown
 
-		$(parentWrapper+" .custom-list-item .dropdown-item").on("click", function(e){
+		$(parentWrapper+" ."+itemLinkStyleClass+" .dropdown-item").on("click", function(e){
 			e.preventDefault();
-			var option_no = $(this).parents(".custom-list-item").attr("data-option");
+			var option_no = $(this).parents("."+itemLinkStyleClass).attr("data-option");
 			var selected_item = $(this).text();
-			$(this).parents(".dropdown-wrapper").siblings(".select-box").find("option[data-item="+option_no+"]").prop("selected", true);
-			$(this).parents(".dropdown-wrapper").find(".dropdown-link .current-value").text(selected_item);
-			$(".dropdown-wrapper").removeClass("open");
-			$("."+dropDownParentClass+" .dropdown-list").slideUp();
+			$(this).parents(".lesbox-dropdown-wrapper").siblings(".select-box").find("option[data-item="+option_no+"]").prop("selected", true);
+			$(this).parents(".lesbox-dropdown-wrapper").find(".lesbox-dropdown-link .current-value").text(selected_item);
+			$(".lesbox-dropdown-wrapper").removeClass("open");
+			$("."+dropDownParentClass+" .lesbox-dropdown-list").slideUp();
 		});
 		
 		//END: Selecting item from dropdown
@@ -114,20 +115,20 @@ var selectDropDownClass;
 		tar_ele = $(e.target);
 		tar_class = tar_ele.attr("class");
 		
-		if(!tar_ele.parents().hasClass(dropDownParent)){
-			$(".dropdown-wrapper").removeClass("open");
-			$("."+selectDropDownClass+" .dropdown-list").slideUp();
+		if(!tar_ele.parents().hasClass(selectDropDownClass)){
+			$(".lesbox-dropdown-wrapper").removeClass("open");
+			$("."+selectDropDownClass+" .lesbox-dropdown-list").slideUp();
 		}else{
-			if((tar_ele.hasClass("dropdown-link")) || (tar_ele.parents().hasClass("dropdown-link"))){
+			if((tar_ele.hasClass("lesbox-dropdown-link")) || (tar_ele.parents().hasClass("lesbox-dropdown-link"))){
 				e.preventDefault();
-				if(!tar_ele.parents(".dropdown-wrapper").hasClass("open")){		//Open the dropdown
-					$(".dropdown-wrapper").removeClass("open");
-					$("."+selectDropDownClass+" .dropdown-list").slideUp();
-					tar_ele.parents(".dropdown-wrapper").addClass("open");
-					tar_ele.parents(".dropdown-wrapper").find(".dropdown-list").slideDown();
+				if(!tar_ele.parents(".lesbox-dropdown-wrapper").hasClass("open")){		//Open the dropdown
+					$(".lesbox-dropdown-wrapper").removeClass("open");
+					$("."+selectDropDownClass+" .lesbox-dropdown-list").slideUp();
+					tar_ele.parents(".lesbox-dropdown-wrapper").addClass("open");
+					tar_ele.parents(".lesbox-dropdown-wrapper").find(".lesbox-dropdown-list").slideDown();
 				}else{																	//Close the dropdown
-					$(".dropdown-wrapper").removeClass("open");
-					$("."+selectDropDownClass+" .dropdown-list").slideUp();
+					$(".lesbox-dropdown-wrapper").removeClass("open");
+					$("."+selectDropDownClass+" .lesbox-dropdown-list").slideUp();
 				}
 			}
 		}
