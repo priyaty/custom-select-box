@@ -4,7 +4,8 @@ var gulp = require('gulp'),
 	rename = require('gulp-rename'),
 	minify_js = require('gulp-uglify'),
 	minify_css = require('gulp-clean-css'),
-	browserSync = require('browser-sync');
+	browserSync = require('browser-sync'),
+	mainfile = "lesbox";
 
 gulp.task('browserSync', function() {
 	browserSync.init({
@@ -33,7 +34,7 @@ gulp.task('sass', function() {
 });
 
 gulp.task('minify-js', function(){
-	return gulp.src('dist/js/custom-select-box-plugin.js')
+	return gulp.src('dist/js/'+mainfile+'.js')
 	.pipe(minify_js())
 	.pipe(rename({
 		suffix: ".min",
@@ -43,7 +44,7 @@ gulp.task('minify-js', function(){
 });
 
 gulp.task('minify-css', function(){
-	return gulp.src('dist/css/custom-select-box-plugin.css')
+	return gulp.src('dist/css/'+mainfile+'.css')
 	.pipe(minify_css())
 	.pipe(rename({
 		suffix: ".min",
@@ -52,8 +53,8 @@ gulp.task('minify-css', function(){
 	.pipe(gulp.dest('dist/css'))
 });
 		  
-gulp.task('watch',['browserSync', 'sass', 'pug', 'copy_js', 'minify-css'], function() {
-	gulp.watch("src/js/*.js", ['copy_js']);
+gulp.task('watch',['browserSync', 'sass', 'pug', 'copy_js'], function() {
+	gulp.watch("src/js/*.js", ['copy_js', 'minify-js']);
 	gulp.watch("src/css/main.scss", ['sass', 'minify-css']);
 	gulp.watch("src/css/**/*.scss", ['sass', 'minify-css']);
 	gulp.watch("src/*.pug", ['pug']);
