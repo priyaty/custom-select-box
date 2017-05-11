@@ -12,26 +12,26 @@ $gray-2: #dbdbdb;
   }
 }
 
-.custom-select-box{
+.lesbox{
 	position: relative;
 	display: inline-block;
 	z-index: 10;
 
-	.custom-select-box-link, .dropdown-item{
+	.lesbox-link, .dropdown-item{
 		text-decoration: none;
 	}
 	
-	.custom-select-box-link, .custom-select-box-list{
+	.lesbox-link, .lesbox-list{
 		width: 100%;
 	}
 
-	.custom-select-box-list{
+	.lesbox-list{
 		padding: 0;
 		margin: 0;
 		display: none;
 	}
 
-	.custom-select-box-link{
+	.lesbox-link{
 		background: white;
 		color: $black;
 		padding: 10px 20px;
@@ -55,7 +55,7 @@ $gray-2: #dbdbdb;
 		}
 	}
 
-	.custom-select-box-list{
+	.lesbox-list{
 		position: absolute;
 		border-bottom: 1px solid $light-gray;
 		
@@ -90,8 +90,8 @@ $gray-2: #dbdbdb;
 
 /*Only for IE9*/
 :root {
-	.custom-select-box {
-		.custom-select-box-link{
+	.lesbox {
+		.lesbox-link{
 			display: block;
 			
 			&__icon{

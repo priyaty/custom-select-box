@@ -25,24 +25,24 @@ var selectDropDownClass;
 		parentWrapper = "#"+parentWrapperIdValue;
 		var optionClass = "option-ele",
 			itemLinkClasses = "custom-list-item__link dropdown-item",
-			customBoxWrapperClasses = "custom-select-box dropdown-wrapper",
-			itemListBlockClasses = "custom-select-box-list dropdown-list";
+			customBoxWrapperClasses = "lesbox dropdown-wrapper",
+			itemListBlockClasses = "lesbox-list dropdown-list";
 		
 			if(additionalLinkClass !== ""){
-				customBoxLinkClasses = "custom-select-box-link dropdown-link "+additionalLinkClass;
+				customBoxLinkClasses = "lesbox-link dropdown-link "+additionalLinkClass;
 			}else{
-				customBoxLinkClasses = "custom-select-box-link dropdown-link";
+				customBoxLinkClasses = "lesbox-link dropdown-link";
 			}
 		
 			customBoxWrapper = "<div class='"+customBoxWrapperClasses+"'></div>",
-			selectBoxLink = "<a href='#' class='"+customBoxLinkClasses+"'><span class='span custom-select-box__selected-item current-value'>"+settings.listHeading+"</span></a>",
-			downIcon = "<span class='custom-select-box-link__icon'><img class='dropdown-img' src='img/down-arrow.png'></img></span>",
+			selectBoxLink = "<a href='#' class='"+customBoxLinkClasses+"'><span class='span lesbox__selected-item current-value'>"+settings.listHeading+"</span></a>",
+			downIcon = "<span class='lesbox-link__icon'><img class='dropdown-img' src='img/down-arrow.png'></img></span>",
 			itemListBlock = "<ul class='"+itemListBlockClasses+"'></ul>",
 			itemListElement = "<li class='custom-list-item'></li>",
 			itemLinkElement = "<a class='"+itemLinkClasses+"' href='#'></a>";
 		
 		if(settings.dropdownIcon != "default"){
-			downIcon = "<span class='"+settings.dropdownIcon+" custom-select-box-link__icon' aria-hidden='true'></span>";
+			downIcon = "<span class='"+settings.dropdownIcon+" lesbox-link__icon' aria-hidden='true'></span>";
 		}
 		
 		/*-----------------END: Variable Initialization and declarations-----------------*/
@@ -57,9 +57,9 @@ var selectDropDownClass;
 		$(this).find("select").attr("name", settings.listName);
 
 		$(this).append(customBoxWrapper);
-		$(this).find(".custom-select-box").append(selectBoxLink);
-		$(this).find(".custom-select-box-link").append(downIcon);
-		$(this).find(".custom-select-box").append(itemListBlock);
+		$(this).find(".lesbox").append(selectBoxLink);
+		$(this).find(".lesbox-link").append(downIcon);
+		$(this).find(".lesbox").append(itemListBlock);
 
 		option_ele.each(function(i){
 			if(i>0){
@@ -67,7 +67,7 @@ var selectDropDownClass;
 				$(this).val(option_val);
 				$(this).attr("data-item", "option-"+i);
 				$(this).attr("class", optionClass);
-				listClass = $(this).parents(parentWrapper).find(".custom-select-box-list");
+				listClass = $(this).parents(parentWrapper).find(".lesbox-list");
 				listClass.append(itemListElement);
 				$(parentWrapper).find(".custom-list-item").each(function(j){
 					j++;

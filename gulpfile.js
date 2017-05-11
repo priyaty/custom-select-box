@@ -53,7 +53,7 @@ gulp.task('minify-css', function(){
 	.pipe(gulp.dest('dist/css'))
 });
 		  
-gulp.task('watch',['browserSync', 'sass', 'pug', 'copy_js'], function() {
+gulp.task('watch',['browserSync', 'sass', 'pug', 'copy_js', 'minify-css', 'minify-js'], function() {
 	gulp.watch("src/js/*.js", ['copy_js', 'minify-js']);
 	gulp.watch("src/css/main.scss", ['sass', 'minify-css']);
 	gulp.watch("src/css/**/*.scss", ['sass', 'minify-css']);

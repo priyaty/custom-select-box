@@ -2336,19 +2336,19 @@
 .lesbox-wrapper .select-box {
   display: none; }
 
-.custom-select-box {
+.lesbox {
   position: relative;
   display: inline-block;
   z-index: 10; }
-  .custom-select-box .custom-select-box-link, .custom-select-box .dropdown-item {
+  .lesbox .lesbox-link, .lesbox .dropdown-item {
     text-decoration: none; }
-  .custom-select-box .custom-select-box-link, .custom-select-box .custom-select-box-list {
+  .lesbox .lesbox-link, .lesbox .lesbox-list {
     width: 100%; }
-  .custom-select-box .custom-select-box-list {
+  .lesbox .lesbox-list {
     padding: 0;
     margin: 0;
     display: none; }
-  .custom-select-box .custom-select-box-link {
+  .lesbox .lesbox-link {
     background: white;
     color: #212121;
     padding: 10px 20px;
@@ -2359,37 +2359,37 @@
     z-index: 1;
     position: relative;
     border: 1px solid #dbdbdb; }
-    .custom-select-box .custom-select-box-link__icon {
+    .lesbox .lesbox-link__icon {
       height: 10px;
       display: flex;
       align-items: center; }
-      .custom-select-box .custom-select-box-link__icon .dropdown-img {
+      .lesbox .lesbox-link__icon .dropdown-img {
         height: 10px;
         border: 0; }
-  .custom-select-box .custom-select-box-list {
+  .lesbox .lesbox-list {
     position: absolute;
     border-bottom: 1px solid #f1f1f1;
     background: white;
     border: 1px solid #f1f1f1;
     border-top: 0;
     box-shadow: 0px 0 10px -2px rgba(0, 0, 0, 0.2); }
-    .custom-select-box .custom-select-box-list:last-child {
+    .lesbox .lesbox-list:last-child {
       border: 0; }
-    .custom-select-box .custom-select-box-list .custom-list-item {
+    .lesbox .lesbox-list .custom-list-item {
       list-style: none;
       position: relative;
       border-bottom: 1px solid #f1f1f1;
       transition: 0.2s ease; }
-      .custom-select-box .custom-select-box-list .custom-list-item:hover {
+      .lesbox .lesbox-list .custom-list-item:hover {
         background: #f1f1f1; }
-      .custom-select-box .custom-select-box-list .custom-list-item__link {
+      .lesbox .lesbox-list .custom-list-item__link {
         display: block;
         padding: 10px 20px;
         padding-right: 40px;
         color: #212121; }
 
 /*Only for IE9*/
-:root .custom-select-box .custom-select-box-link {
+:root .lesbox .lesbox-link {
   display: block; }
-  :root .custom-select-box .custom-select-box-link__icon {
+  :root .lesbox .lesbox-link__icon {
     float: right; }
