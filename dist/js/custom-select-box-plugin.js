@@ -1,10 +1,12 @@
+var selectDropDownClass;
+
 (function($) {
 
-    $.fn.customSelectBox = function(options) {
+    $.fn.lesbox = function(options) {
 
 		// Establish our default settings
         var settings = $.extend({
-			dropdownClass: "select-box-wrapper",
+			dropdownClass: "lesbox-wrapper",
 			dropdownIcon: "default",
             listHeading: "List Items",
 			listName: "list_name",
@@ -16,7 +18,8 @@
 		
 		var parentWrapperIdValue, parentWrapper, dropDownParentClass, select_ele, option_ele, option_val, option_no, parent_list, listClass, additionalLinkClass;
 
-		dropDownParentClass = settings.dropdownClass;
+		dropDownParentClass = settings.dropdownClass,
+			selectDropDownClass = dropDownParentClass;
 		additionalLinkClass = settings.additionalLinkClass;
 		parentWrapperIdValue = this.attr("id");
 		parentWrapper = "#"+parentWrapperIdValue;
@@ -94,7 +97,7 @@
 			$(this).parents(".dropdown-wrapper").siblings(".select-box").find("option[data-item="+option_no+"]").prop("selected", true);
 			$(this).parents(".dropdown-wrapper").find(".dropdown-link .current-value").text(selected_item);
 			$(".dropdown-wrapper").removeClass("open");
-			$(".select-box-wrapper .dropdown-list").slideUp();
+			$("."+dropDownParentClass+" .dropdown-list").slideUp();
 		});
 		
 		//END: Selecting item from dropdown
@@ -104,26 +107,27 @@
 	//Open/close dropdown
 	
 	$(document).on("click", function(e){
-		var tar_ele, tar_class;
-		var timeDelay = 400, clearTime = 0;
+		var tar_ele, tar_class,
+			timeDelay = 400, clearTime = 0,
+			dropDownParent = "lesbox-wrapper";
 		
 		tar_ele = $(e.target);
 		tar_class = tar_ele.attr("class");
 		
-		if(!tar_ele.parents().hasClass("select-box-wrapper")){
+		if(!tar_ele.parents().hasClass(dropDownParent)){
 			$(".dropdown-wrapper").removeClass("open");
-			$(".select-box-wrapper .dropdown-list").slideUp();
+			$("."+selectDropDownClass+" .dropdown-list").slideUp();
 		}else{
 			if((tar_ele.hasClass("dropdown-link")) || (tar_ele.parents().hasClass("dropdown-link"))){
 				e.preventDefault();
 				if(!tar_ele.parents(".dropdown-wrapper").hasClass("open")){		//Open the dropdown
 					$(".dropdown-wrapper").removeClass("open");
-					$(".select-box-wrapper .dropdown-list").slideUp();
+					$("."+selectDropDownClass+" .dropdown-list").slideUp();
 					tar_ele.parents(".dropdown-wrapper").addClass("open");
 					tar_ele.parents(".dropdown-wrapper").find(".dropdown-list").slideDown();
 				}else{																	//Close the dropdown
 					$(".dropdown-wrapper").removeClass("open");
-					$(".select-box-wrapper .dropdown-list").slideUp();
+					$("."+selectDropDownClass+" .dropdown-list").slideUp();
 				}
 			}
 		}

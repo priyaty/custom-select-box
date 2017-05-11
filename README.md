@@ -1,10 +1,10 @@
-# Custom Select Box
-_Select box which can be styled..._
+# Lesbox
+_Select box with less code..._
 
 ## HTML Strucure
 
 ```html
-<div class=”select-box-wrapper“ id=”list-id”>
+<div class=”lesbox-wrapper“ id=”list-id”>
   <select>
     <option></option>
     <option>Option 1</option>
@@ -19,14 +19,14 @@ _Select box which can be styled..._
 ## Initialization
 Initialize with:
 ```javascript
-$('#list-id').customSelectBox();
+$('#list-id').lesbox();
 ```
 
 ## Settings
 
 Option | Type | Default | Description
 ------ | ---- | ------- | -----------
-dropdownClass | string | select-box-wrapper | It’s the parent container of the html select box.
+dropdownClass | string | lesbox-wrapper | It’s the parent container of the html select box.
 dropdownIcon | string | default | It’s the class name/s of the dropdown icon. E.g dropdownIcon: “dropdown-icon”. Incase if font awesome icon has to be added, the value can be something like this “fa fa-angle-down”.
 listHeading | string | List Items | Custom Select box list heading.
 listName | string | list_name | Name attribute value of the respective select box.

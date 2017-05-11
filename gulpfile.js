@@ -52,8 +52,8 @@ gulp.task('minify-css', function(){
 	.pipe(gulp.dest('dist/css'))
 });
 		  
-gulp.task('watch',['browserSync', 'sass', 'pug', 'copy_js', 'minify-js', 'minify-css'], function() {
-	gulp.watch("src/js/*.js", ['copy_js', , 'minify-js']);
+gulp.task('watch',['browserSync', 'sass', 'pug', 'copy_js', 'minify-css'], function() {
+	gulp.watch("src/js/*.js", ['copy_js']);
 	gulp.watch("src/css/main.scss", ['sass', 'minify-css']);
 	gulp.watch("src/css/**/*.scss", ['sass', 'minify-css']);
 	gulp.watch("src/*.pug", ['pug']);
