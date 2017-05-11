@@ -7,29 +7,37 @@
 			dropdownClass: "select-box-wrapper",
 			dropdownIcon: "default",
             listHeading: "List Items",
-			listName: "list_name"
+			listName: "list_name",
+			additionalLinkClass: ""
         }, options);
 		// END: Establish our default settings
 
 		/*-----------------Variable Initialization and declarations-----------------*/
 		
-		var parentWrapperIdValue, parentWrapper, dropDownParentClass, select_ele, option_ele, option_val, option_no, parent_list, listClass;
+		var parentWrapperIdValue, parentWrapper, dropDownParentClass, select_ele, option_ele, option_val, option_no, parent_list, listClass, additionalLinkClass;
 
 		dropDownParentClass = settings.dropdownClass;
+		additionalLinkClass = settings.additionalLinkClass;
 		parentWrapperIdValue = this.attr("id");
 		parentWrapper = "#"+parentWrapperIdValue;
-		var optionClass = "option-ele";
-		var itemLinkClasses = "custom-list-item__link dropdown-item";
-		var customBoxWrapperClasses = "custom-select-box dropdown-wrapper";
-		var itemListBlockClasses = "custom-select-box-list dropdown-list";
-		var customBoxLinkClasses = "custom-select-box-link dropdown-link";
-
-		var customBoxWrapper = "<div class='"+customBoxWrapperClasses+"'></div>";
-		var selectBoxLink = "<a href='#' class='"+customBoxLinkClasses+"'><span class='span custom-select-box__selected-item current-value'>"+settings.listHeading+"</span></a>";
-		var downIcon = "<span class='custom-select-box-link__icon'><img class='dropdown-img' src='img/down-arrow.png'></img></span>";
-		var itemListBlock = "<ul class='"+itemListBlockClasses+"'></ul>";
-		var itemListElement = "<li class='custom-list-item'></li>";
-		var itemLinkElement = "<a class='"+itemLinkClasses+"' href='#'></a>";
+		var optionClass = "option-ele",
+			itemLinkClasses = "custom-list-item__link dropdown-item",
+			customBoxWrapperClasses = "custom-select-box dropdown-wrapper",
+			itemListBlockClasses = "custom-select-box-list dropdown-list";
+		
+			if(additionalLinkClass !== ""){
+				customBoxLinkClasses = "custom-select-box-link dropdown-link "+additionalLinkClass;
+			}else{
+				customBoxLinkClasses = "custom-select-box-link dropdown-link";
+			}
+		
+			
+			customBoxWrapper = "<div class='"+customBoxWrapperClasses+"'></div>",
+			selectBoxLink = "<a href='#' class='"+customBoxLinkClasses+"'><span class='span custom-select-box__selected-item current-value'>"+settings.listHeading+"</span></a>",
+			downIcon = "<span class='custom-select-box-link__icon'><img class='dropdown-img' src='img/down-arrow.png'></img></span>",
+			itemListBlock = "<ul class='"+itemListBlockClasses+"'></ul>",
+			itemListElement = "<li class='custom-list-item'></li>",
+			itemLinkElement = "<a class='"+itemLinkClasses+"' href='#'></a>";
 		
 		if(settings.dropdownIcon != "default"){
 			downIcon = "<span class='"+settings.dropdownIcon+" custom-select-box-link__icon' aria-hidden='true'></span>";

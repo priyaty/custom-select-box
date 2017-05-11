@@ -8,12 +8,14 @@ $(document).ready( function() {
 	
 	$('#cars-list').customSelectBox({
 		listHeading: "Cars",
-		listName: "cars"
+		listName: "cars",
+		additionalLinkClass: "cars-text-style"
 	});
 	
 	$('#country-list').customSelectBox({
 		listHeading: "Country list",
-		listName: "countries"
+		listName: "countries",
+		additionalLinkClass: "country-text-style"
 	});
 	
 });
