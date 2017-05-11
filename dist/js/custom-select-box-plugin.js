@@ -86,6 +86,8 @@
 			var selected_item = $(this).text();
 			$(this).parents(".dropdown-wrapper").siblings(".select-box").find("option[data-item="+option_no+"]").prop("selected", true);
 			$(this).parents(".dropdown-wrapper").find(".dropdown-link .current-value").text(selected_item);
+			$(".dropdown-wrapper").removeClass("open");
+			$(".select-box-wrapper .dropdown-list").slideUp();
 		});
 		
 		//END: Selecting item from dropdown
@@ -107,12 +109,12 @@
 		}else{
 			if((tar_ele.hasClass("dropdown-link")) || (tar_ele.parents().hasClass("dropdown-link"))){
 				e.preventDefault();
-				if(!tar_ele.parents(".dropdown-wrapper").hasClass("open")){
+				if(!tar_ele.parents(".dropdown-wrapper").hasClass("open")){		//Open the dropdown
 					$(".dropdown-wrapper").removeClass("open");
 					$(".select-box-wrapper .dropdown-list").slideUp();
 					tar_ele.parents(".dropdown-wrapper").addClass("open");
 					tar_ele.parents(".dropdown-wrapper").find(".dropdown-list").slideDown();
-				}else{
+				}else{																	//Close the dropdown
 					$(".dropdown-wrapper").removeClass("open");
 					$(".select-box-wrapper .dropdown-list").slideUp();
 				}
