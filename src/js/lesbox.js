@@ -37,7 +37,7 @@ var selectDropDownClass;
 		
 			customBoxWrapper = "<div class='"+lesboxWrapperClasses+"'></div>",
 			selectBoxLink = "<a href='#' class='"+customBoxLinkClasses+"'><span class='span lesbox__selected-item current-value'>"+settings.listHeading+"</span></a>",
-			downIcon = "<span class='lesbox-link__icon'><img class='dropdown-img' src='img/down-arrow.png'></img></span>",
+			downIcon = "<span class='lesbox-link__icon'><img class='lesbox-icon' src='img/down-arrow.png'></img></span>",
 			itemListBlock = "<ul class='"+itemListBlockClasses+"'></ul>",
 			itemListElement = "<li class='"+itemLinkStyleClass+"'></li>",
 			itemLinkElement = "<a class='"+itemLinkClasses+"' href='#'></a>";

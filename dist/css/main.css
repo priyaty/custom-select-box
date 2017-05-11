@@ -2363,7 +2363,7 @@
       height: 10px;
       display: flex;
       align-items: center; }
-      .lesbox .lesbox-link__icon .dropdown-img {
+      .lesbox .lesbox-link__icon .lesbox-icon {
         height: 10px;
         border: 0; }
   .lesbox .lesbox-list {
