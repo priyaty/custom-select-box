@@ -48,7 +48,7 @@ For styling the dropdown outer list block.
 For styling the dropdown list item link.
 
 ## Browser Support
-Custom select box works on IE7+ in addition to other modern browsers such as Chrome, Firefox, and Safari.
+Lesbox works on IE7+ in addition to other modern browsers such as Chrome, Firefox, and Safari.
 
 ## Dependencies
 jQuery 1.12+
