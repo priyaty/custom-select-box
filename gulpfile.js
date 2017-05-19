@@ -3,6 +3,8 @@ var gulp = require('gulp'),
 	sass = require('gulp-sass'),
 	rename = require('gulp-rename'),
 	minify_js = require('gulp-uglify'),
+	autoprefixer = require('gulp-autoprefixer'),
+	concat = require('gulp-concat'),
 	minify_css = require('gulp-clean-css'),
 	browserSync = require('browser-sync'),
 	mainfile = "lesbox";
@@ -28,8 +30,21 @@ gulp.task('copy_js', function(){
 });
 
 gulp.task('sass', function() {
-	return gulp.src('src/css/*.scss')
+	return gulp.src('src/css/main.scss')
 	.pipe(sass())
+	.pipe(concat('main.css'))
+	.pipe(autoprefixer({
+		browsers: "last 10 versions"
+	}))
+	.pipe(gulp.dest('dist/css'))
+});
+
+gulp.task('main-sass', function() {
+	return gulp.src(['src/css/'+mainfile+'.scss', 'src/css/browser-compatibility.scss'])
+	.pipe(sass())
+	.pipe(autoprefixer({
+		browsers: "last 10 versions"
+	}))
 	.pipe(gulp.dest('dist/css'))
 });
 
@@ -44,8 +59,12 @@ gulp.task('minify-js', function(){
 });
 
 gulp.task('minify-css', function(){
-	return gulp.src('dist/css/'+mainfile+'.css')
+	return gulp.src(['dist/css/'+mainfile+'.css', 'src/css/browser-compatibility.scss'])
 	.pipe(minify_css())
+	.pipe(autoprefixer({
+		browsers: "last 10 versions"
+	}))
+	.pipe(concat(mainfile+'.css'))
 	.pipe(rename({
 		suffix: ".min",
 		extname: ".css"
@@ -53,10 +72,10 @@ gulp.task('minify-css', function(){
 	.pipe(gulp.dest('dist/css'))
 });
 		  
-gulp.task('watch',['browserSync', 'sass', 'pug', 'copy_js', 'minify-css', 'minify-js'], function() {
+gulp.task('watch',['browserSync', 'sass', 'main-sass', 'pug', 'copy_js', 'minify-css', 'minify-js'], function() {
 	gulp.watch("src/js/*.js", ['copy_js', 'minify-js']);
-	gulp.watch("src/css/main.scss", ['sass', 'minify-css']);
-	gulp.watch("src/css/**/*.scss", ['sass', 'minify-css']);
+	gulp.watch("src/css/main.scss", ['sass', 'main-sass', 'minify-css']);
+	gulp.watch("src/css/**/*.scss", ['sass', 'main-sass', 'minify-css']);
 	gulp.watch("src/*.pug", ['pug']);
 	gulp.watch("src/**/*.pug", ['pug']);
 	gulp.watch('dist/*.html', browserSync.reload);

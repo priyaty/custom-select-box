@@ -87,16 +87,3 @@ $gray-2: #dbdbdb;
 		}
 	}
 }
-
-/*Only for IE9*/
-:root {
-	.lesbox {
-		.lesbox-link{
-			display: block;
-			
-			&__icon{
-				float: right;
-			}
-		}
-	}
-}

@@ -1,5 +1,6 @@
-/*Only for IE9*/
-:root .custom-select-box .custom-select-box-link {
+.no-flexbox .lesbox .lesbox-link {
   display: block; }
-  :root .custom-select-box .custom-select-box-link__icon {
-    float: right; }
+  .no-flexbox .lesbox .lesbox-link__icon {
+    float: right;
+    position: relative;
+    bottom: 10px; }

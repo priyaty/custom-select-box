@@ -1,11 +1,12 @@
-/*Only for IE9*/
-:root {
-	.custom-select-box {
-		.custom-select-box-link{
+.no-flexbox{
+	.lesbox{
+		.lesbox-link{
 			display: block;
 			
 			&__icon{
 				float: right;
+				position: relative;
+				bottom: 10px;
 			}
 		}
 	}

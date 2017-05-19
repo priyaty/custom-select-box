@@ -62,7 +62,8 @@
 .fa-border {
   padding: .2em .25em .15em;
   border: solid 0.08em #eeeeee;
-  border-radius: .1em; }
+  -webkit-border-radius: .1em;
+          border-radius: .1em; }
 
 .fa-pull-left {
   float: left; }
@@ -148,7 +149,8 @@
 :root .fa-rotate-270,
 :root .fa-flip-horizontal,
 :root .fa-flip-vertical {
-  filter: none; }
+  -webkit-filter: none;
+          filter: none; }
 
 .fa-stack {
   position: relative;
@@ -2331,6 +2333,12 @@
   overflow: visible;
   clip: auto; }
 
+.dropdown-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
 /*Color variables*/
 /*END: Color variables*/
 .lesbox-wrapper .select-box {
@@ -2352,17 +2360,32 @@
     background: white;
     color: #212121;
     padding: 10px 20px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
     width: 220px;
     z-index: 1;
     position: relative;
     border: 1px solid #dbdbdb; }
     .lesbox .lesbox-link__icon {
       height: 10px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
       display: flex;
-      align-items: center; }
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center; }
       .lesbox .lesbox-link__icon .lesbox-icon {
         height: 10px;
         border: 0; }
@@ -2372,13 +2395,16 @@
     background: white;
     border: 1px solid #f1f1f1;
     border-top: 0;
-    box-shadow: 0px 0 10px -2px rgba(0, 0, 0, 0.2); }
+    -webkit-box-shadow: 0px 0 10px -2px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 0 10px -2px rgba(0, 0, 0, 0.2); }
     .lesbox .lesbox-list:last-child {
       border: 0; }
     .lesbox .lesbox-list .lesbox-list-item {
       list-style: none;
       position: relative;
       border-bottom: 1px solid #f1f1f1;
+      -webkit-transition: 0.2s ease;
+      -o-transition: 0.2s ease;
       transition: 0.2s ease; }
       .lesbox .lesbox-list .lesbox-list-item:hover {
         background: #f1f1f1; }
@@ -2388,8 +2414,9 @@
         padding-right: 40px;
         color: #212121; }
 
-/*Only for IE9*/
-:root .lesbox .lesbox-link {
+.no-flexbox .lesbox .lesbox-link {
   display: block; }
-  :root .lesbox .lesbox-link__icon {
-    float: right; }
+  .no-flexbox .lesbox .lesbox-link__icon {
+    float: right;
+    position: relative;
+    bottom: 10px; }
