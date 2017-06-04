@@ -16,7 +16,7 @@ var selectDropDownClass;
 
 		/*-----------------Variable Initialization and declarations-----------------*/
 		
-		var parentWrapperIdValue, parentWrapper, dropDownParentClass, select_ele, option_ele, option_val, option_no, parent_list, listClass, additionalLinkClass, itemLinkStyleClass;
+		var parentWrapperIdValue, parentWrapper, dropDownParentClass, select_ele, option_ele, option_val, option_no, parent_list, listClass, additionalLinkClass, itemLinkStyleClass, dropdownLink;
 
 		dropDownParentClass = settings.dropdownClass,
 		selectDropDownClass = dropDownParentClass;
@@ -45,6 +45,13 @@ var selectDropDownClass;
 		if(settings.dropdownIcon != "default"){
 			downIcon = "<span class='"+settings.dropdownIcon+" lesbox-link__icon' aria-hidden='true'></span>";
 		}
+		
+//		if($("#"+parentWrapperIdValue).find("option").attr("data-href")){
+//			console.log("has data href");
+//		}else{
+//			console.log("does not have data href");
+//		}
+		
 		
 		/*-----------------END: Variable Initialization and declarations-----------------*/
 		
@@ -85,6 +92,13 @@ var selectDropDownClass;
 			option_val = $(this).val();
 			option_no = $(this).attr("data-item");
 			listClass.find("li[data-option=option-"+i+"]").children(".dropdown-item").text(option_val);
+		});
+		
+		$("#"+parentWrapperIdValue+" option").each(function(i){
+			dropdownLink = $(this).attr("data-href");
+			if(dropdownLink){
+				$("."+itemLinkStyleClass+"[data-option=option-"+i+"] .dropdown-item").attr("href", dropdownLink);
+			}
 		});
 
 		/*-----------------END: Inserting elements-----------------*/

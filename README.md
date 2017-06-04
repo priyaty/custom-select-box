@@ -32,6 +32,14 @@ listHeading | string | List Items | Custom Select box list heading.
 listName | string | list_name | Name attribute value of the respective select box.
 additionalLinkClass | string | null | If there is any additional style class that needs to be added to the dropdown link, then that can be specified using this setting.
 
+## Attributes
+
+Add the following attribute/s to "option" tag/s:
+
+Option | Type | Default | Description
+------ | ---- | ------- | -----------
+data-href | string | none | If a dropdown item needs to link to a page or any section, this attribute can used for inserting the link value.
+
 ## Custom styling of the select box
 Use the following classes to make any desired css changes to the respective element.
 
