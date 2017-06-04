@@ -46,13 +46,6 @@ var selectDropDownClass;
 			downIcon = "<span class='"+settings.dropdownIcon+" lesbox-link__icon' aria-hidden='true'></span>";
 		}
 		
-//		if($("#"+parentWrapperIdValue).find("option").attr("data-href")){
-//			console.log("has data href");
-//		}else{
-//			console.log("does not have data href");
-//		}
-		
-		
 		/*-----------------END: Variable Initialization and declarations-----------------*/
 		
 		/*-----------------Inserting elements-----------------*/
@@ -135,6 +128,7 @@ var selectDropDownClass;
 		}else{
 			if((tar_ele.hasClass("lesbox-dropdown-link")) || (tar_ele.parents().hasClass("lesbox-dropdown-link"))){
 				e.preventDefault();
+				
 				if(!tar_ele.parents(".lesbox-dropdown-wrapper").hasClass("open")){		//Open the dropdown
 					$(".lesbox-dropdown-wrapper").removeClass("open");
 					$("."+selectDropDownClass+" .lesbox-dropdown-list").slideUp();
