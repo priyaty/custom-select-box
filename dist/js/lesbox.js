@@ -99,7 +99,6 @@ var selectDropDownClass;
 		//Selecting item from dropdown
 
 		$(parentWrapper+" ."+itemLinkStyleClass+" .dropdown-item").on("click", function(e){
-			e.preventDefault();
 			var option_no = $(this).parents("."+itemLinkStyleClass).attr("data-option");
 			var selected_item = $(this).text();
 			$(this).parents(".lesbox-dropdown-wrapper").siblings(".select-box").find("option[data-item="+option_no+"]").prop("selected", true);
@@ -127,7 +126,6 @@ var selectDropDownClass;
 			$("."+selectDropDownClass+" .lesbox-dropdown-list").slideUp();
 		}else{
 			if((tar_ele.hasClass("lesbox-dropdown-link")) || (tar_ele.parents().hasClass("lesbox-dropdown-link"))){
-				e.preventDefault();
 				
 				if(!tar_ele.parents(".lesbox-dropdown-wrapper").hasClass("open")){		//Open the dropdown
 					$(".lesbox-dropdown-wrapper").removeClass("open");
