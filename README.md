@@ -26,7 +26,6 @@ $('#list-id').lesbox();
 
 Option | Type | Default | Description
 ------ | ---- | ------- | -----------
-dropdownClass | string | lesbox-wrapper | It’s the parent container of the lesbox.
 dropdownIcon | string | default | It’s the class name/s of the dropdown icon. E.g dropdownIcon: “lesbox-icon”. Incase if font awesome icon has to be added, the value can be something like this “fa fa-angle-down”.
 listHeading | string | List Items | Custom Select box list heading.
 listName | string | list_name | Name attribute value of the respective select box.

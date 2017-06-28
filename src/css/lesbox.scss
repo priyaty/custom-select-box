@@ -16,12 +16,13 @@ $gray-2: #dbdbdb;
 	position: relative;
 	display: inline-block;
 	z-index: 10;
+	width: 100%;
 
 	.lesbox-link, .dropdown-item{
 		text-decoration: none;
 	}
 	
-	.lesbox-link, .lesbox-list{
+	.lesbox-list{
 		width: 100%;
 	}
 
@@ -38,7 +39,6 @@ $gray-2: #dbdbdb;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		width: 220px;
 		z-index: 1;
 		position: relative;
 		border: 1px solid $gray-2;

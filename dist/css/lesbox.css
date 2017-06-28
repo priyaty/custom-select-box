@@ -6,10 +6,11 @@
 .lesbox {
   position: relative;
   display: inline-block;
-  z-index: 10; }
+  z-index: 10;
+  width: 100%; }
   .lesbox .lesbox-link, .lesbox .dropdown-item {
     text-decoration: none; }
-  .lesbox .lesbox-link, .lesbox .lesbox-list {
+  .lesbox .lesbox-list {
     width: 100%; }
   .lesbox .lesbox-list {
     padding: 0;
@@ -31,7 +32,6 @@
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
-    width: 220px;
     z-index: 1;
     position: relative;
     border: 1px solid #dbdbdb; }

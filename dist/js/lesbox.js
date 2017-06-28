@@ -1,12 +1,10 @@
 var selectDropDownClass;
 
 (function($) {
-
     $.fn.lesbox = function(options) {
 
 		// Establish our default settings
         var settings = $.extend({
-			dropdownClass: "lesbox-wrapper",
 			dropdownIcon: "default",
             listHeading: "List Items",
 			listName: "list_name",
@@ -17,8 +15,8 @@ var selectDropDownClass;
 		/*-----------------Variable Initialization and declarations-----------------*/
 		
 		var parentWrapperIdValue, parentWrapper, dropDownParentClass, select_ele, option_ele, option_val, option_no, parent_list, listClass, additionalLinkClass, itemLinkStyleClass, dropdownLink;
-
-		dropDownParentClass = settings.dropdownClass,
+		
+		dropDownParentClass = "lesbox-wrapper";
 		selectDropDownClass = dropDownParentClass;
 		additionalLinkClass = settings.additionalLinkClass;
 		parentWrapperIdValue = this.attr("id");
@@ -108,15 +106,13 @@ var selectDropDownClass;
 		});
 		
 		//END: Selecting item from dropdown
-
     }
 	
 	//Open/close dropdown
 	
 	$(document).on("click", function(e){
 		var tar_ele, tar_class,
-			timeDelay = 400, clearTime = 0,
-			dropDownParent = "lesbox-wrapper";
+			timeDelay = 400, clearTime = 0;
 		
 		tar_ele = $(e.target);
 		tar_class = tar_ele.attr("class");
