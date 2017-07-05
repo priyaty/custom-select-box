@@ -18,6 +18,10 @@ $gray-2: #dbdbdb;
 	z-index: 10;
 	width: 100%;
 
+	&.open{
+		z-index: 11;
+	}
+	
 	.lesbox-link, .dropdown-item{
 		text-decoration: none;
 	}

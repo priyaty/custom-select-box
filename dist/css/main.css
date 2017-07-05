@@ -2351,6 +2351,8 @@
   display: inline-block;
   z-index: 10;
   width: 100%; }
+  .lesbox.open {
+    z-index: 11; }
   .lesbox .lesbox-link, .lesbox .dropdown-item {
     text-decoration: none; }
   .lesbox .lesbox-list {
