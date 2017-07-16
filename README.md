@@ -62,7 +62,7 @@ jQuery 1.12+
 
 ### License
 
-Copyright (c) 2016 Priya Tyagi
+Copyright (c) 2017 Priya Tyagi
 
 Licensed under the MIT license.
 
