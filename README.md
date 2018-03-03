@@ -54,8 +54,16 @@ For styling the dropdown outer list block.
 ### 4.	.lesbox-list-item__link
 For styling the dropdown list item link.
 
-## Browser Support
+### Browser Support
 Lesbox works on IE7+ in addition to other modern browsers such as Chrome, Firefox, and Safari.
 
-## Dependencies
+### Dependencies
 jQuery 1.12+
+
+### License
+
+Copyright (c) 2017 Priya Tyagi
+
+Licensed under the MIT license.
+
+Free as in Bacon.
