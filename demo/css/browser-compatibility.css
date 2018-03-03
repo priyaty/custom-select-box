@@ -1,0 +1,6 @@
+.no-flexbox .lesbox .lesbox-link {
+  display: block; }
+  .no-flexbox .lesbox .lesbox-link__icon {
+    float: right;
+    position: relative;
+    bottom: 10px; }
